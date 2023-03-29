@@ -1,7 +1,7 @@
 package com.sport.personaltrainerqueryservice.service;
 
 import com.sport.personaltrainerqueryservice.dto.WorkoutSessionViewDTO;
-import com.sport.personaltrainerqueryservice.queries.FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery;
+import com.sport.personaltrainerqueryservice.queries.FindWorkoutSessionViewByApprenticeIdAndWorkoutDateBetweenQuery;
 import com.sport.personaltrainerqueryservice.querymodel.WorkoutSessionView;
 import java.sql.Date;
 import java.util.List;
@@ -21,7 +21,7 @@ public class WorkoutSessionQueryService {
   public CompletableFuture<List<WorkoutSessionViewDTO>> findApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetween(
       int apprenticeId, Date start, Date end) {
     return queryGateway.query(
-            new FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery(
+            new FindWorkoutSessionViewByApprenticeIdAndWorkoutDateBetweenQuery(
                 apprenticeId, start, end), ResponseTypes.multipleInstancesOf(WorkoutSessionView.class))
         .thenApply(r -> r.stream()
             .map(WorkoutSessionViewDTO::new)

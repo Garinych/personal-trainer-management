@@ -1,4 +1,4 @@
-package com.sport.events;
+package com.sport.personaltrainerecentscommon;
 
 public class ConfirmWorkoutEvent extends AbstractWorkoutEvent {
 

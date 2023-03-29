@@ -1,6 +1,6 @@
 package com.sport.personaltrainerqueryservice.queryhandler;
 
-import com.sport.personaltrainerqueryservice.queries.FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery;
+import com.sport.personaltrainerqueryservice.queries.FindWorkoutSessionViewByApprenticeIdAndWorkoutDateBetweenQuery;
 import com.sport.personaltrainerqueryservice.querymodel.WorkoutSessionView;
 import com.sport.personaltrainerqueryservice.service.WorkoutSessionViewServiceImpl;
 import java.util.List;
@@ -17,7 +17,7 @@ public class WorkoutQueryHandlerImpl implements WorkoutQueryHandler {
   @QueryHandler
   @Override
   public List<WorkoutSessionView> findApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetween(
-      FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery query) {
+      FindWorkoutSessionViewByApprenticeIdAndWorkoutDateBetweenQuery query) {
     return workoutSessionViewService.findApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetween(
         query.getApprenticeId(), query.getStart(), query.getEnd());
   }

@@ -9,7 +9,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery {
+public class FindWorkoutSessionViewByApprenticeIdAndWorkoutDateBetweenQuery {
 
     private Integer apprenticeId;
     private Date start;
@@ -19,7 +19,8 @@ public class FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery that = (FindApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetweenQuery) o;
+        FindWorkoutSessionViewByApprenticeIdAndWorkoutDateBetweenQuery
+            that = (FindWorkoutSessionViewByApprenticeIdAndWorkoutDateBetweenQuery) o;
         return apprenticeId.equals(that.apprenticeId);
     }
 

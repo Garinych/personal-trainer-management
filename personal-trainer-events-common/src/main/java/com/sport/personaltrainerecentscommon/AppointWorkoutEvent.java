@@ -1,4 +1,4 @@
-package com.sport.events;
+package com.sport.personaltrainerecentscommon;
 
 import java.sql.Date;
 import java.util.Objects;

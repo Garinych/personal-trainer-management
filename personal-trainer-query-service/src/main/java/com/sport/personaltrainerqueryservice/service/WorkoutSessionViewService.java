@@ -3,7 +3,7 @@ package com.sport.personaltrainerqueryservice.service;
 import java.util.Date;
 import java.util.List;
 
-import com.sport.events.AbstractWorkoutEvent;
+import com.sport.personaltrainerecentscommon.AbstractWorkoutEvent;
 import com.sport.personaltrainerqueryservice.querymodel.WorkoutSessionView;
 
 public interface WorkoutSessionViewService {

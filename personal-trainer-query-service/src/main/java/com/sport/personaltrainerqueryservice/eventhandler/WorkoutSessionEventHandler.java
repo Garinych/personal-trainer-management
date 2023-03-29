@@ -1,9 +1,9 @@
 package com.sport.personaltrainerqueryservice.eventhandler;
 
 
-import com.sport.events.AppointWorkoutEvent;
-import com.sport.events.ConfirmWorkoutEvent;
-import com.sport.events.SetWorkoutExercisesEvent;
+import com.sport.personaltrainerecentscommon.AppointWorkoutEvent;
+import com.sport.personaltrainerecentscommon.ConfirmWorkoutEvent;
+import com.sport.personaltrainerecentscommon.SetWorkoutExercisesEvent;
 
 public interface WorkoutSessionEventHandler {
 

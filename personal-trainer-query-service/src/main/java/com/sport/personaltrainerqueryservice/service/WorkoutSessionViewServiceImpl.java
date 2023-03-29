@@ -1,9 +1,9 @@
 package com.sport.personaltrainerqueryservice.service;
 
-import com.sport.events.AbstractWorkoutEvent;
-import com.sport.events.AppointWorkoutEvent;
-import com.sport.events.ConfirmWorkoutEvent;
-import com.sport.events.SetWorkoutExercisesEvent;
+import com.sport.personaltrainerecentscommon.AbstractWorkoutEvent;
+import com.sport.personaltrainerecentscommon.AppointWorkoutEvent;
+import com.sport.personaltrainerecentscommon.ConfirmWorkoutEvent;
+import com.sport.personaltrainerecentscommon.SetWorkoutExercisesEvent;
 import com.sport.personaltrainerqueryservice.querymodel.WorkoutSessionView;
 import com.sport.personaltrainerqueryservice.repository.WorkoutSessionViewRepository;
 import java.util.Date;

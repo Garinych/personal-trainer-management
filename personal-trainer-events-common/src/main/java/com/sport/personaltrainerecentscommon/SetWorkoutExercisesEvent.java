@@ -1,4 +1,4 @@
-package com.sport.events;
+package com.sport.personaltrainerecentscommon;
 
 import java.util.Set;
 

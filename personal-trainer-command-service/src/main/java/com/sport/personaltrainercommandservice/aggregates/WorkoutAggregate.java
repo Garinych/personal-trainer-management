@@ -2,9 +2,9 @@ package com.sport.personaltrainercommandservice.aggregates;
 
 import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 
-import com.sport.events.AppointWorkoutEvent;
-import com.sport.events.ConfirmWorkoutEvent;
-import com.sport.events.SetWorkoutExercisesEvent;
+import com.sport.personaltrainerecentscommon.AppointWorkoutEvent;
+import com.sport.personaltrainerecentscommon.ConfirmWorkoutEvent;
+import com.sport.personaltrainerecentscommon.SetWorkoutExercisesEvent;
 import com.sport.personaltrainercommandservice.commands.AppointWorkoutCommand;
 import com.sport.personaltrainercommandservice.commands.ConfirmWorkoutCommand;
 import com.sport.personaltrainercommandservice.commands.SetWorkoutExercisesCommand;
