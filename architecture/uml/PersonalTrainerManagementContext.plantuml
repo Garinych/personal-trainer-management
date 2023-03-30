@@ -1,0 +1,16 @@
+@startuml Project1 SystemContext
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include FONTAWESOME/users.puml
+
+System(systemAlias, "Personal Trainer Management", "System for managing personal workouts")
+Person(trainerAlias, "Personal Trainer", "Appoints exercises to apprentice and confirm workout")
+Person(apprenticeAlias, "Apprentice", "Schedule workout", $sprite="users")
+
+Rel(trainerAlias, systemAlias, "uses")
+Rel(apprenticeAlias, systemAlias, "uses")
+
+SHOW_LEGEND()
+
+@enduml

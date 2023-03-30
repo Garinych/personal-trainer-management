@@ -1,0 +1,30 @@
+@startuml Project1 SystemContext
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include FONTAWESOME/users.puml
+
+
+System_Ext(axonAlias, "Axon Server", "Event Store")
+
+
+System_Boundary(systemBoundaryAlias, "Personal Trainer Management", $link="https://github.com/plantuml-stdlib/C4-PlantUML") {
+
+    Container(personalTrainerCommandService, "Personal Trainer Command Service", "Java, Spring", "TBD", $tags="v1.0")
+    Container(personalTrainerQueryService, "Personal Trainer Query Service", "Java, Spring", "TBD", $tags="v1.0")
+
+    ContainerDb(db, "Database", "H2 SQL", "Stores query service views")
+
+    Rel_R(personalTrainerCommandService, personalTrainerQueryService, "Send events")
+
+    Rel_D(personalTrainerQueryService, db, "Reads/writes views")
+}
+
+
+Rel_U(personalTrainerCommandService, axonAlias, "Send events to store")
+Rel_U(personalTrainerQueryService, axonAlias, "Reads events from store")
+
+
+SHOW_LEGEND()
+
+@enduml
