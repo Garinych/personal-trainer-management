@@ -14,6 +14,9 @@ public class WorkoutQueryHandlerImpl implements WorkoutQueryHandler {
 
   private final WorkoutSessionViewServiceImpl workoutSessionViewService;
 
+  /**
+   * Use the AnnotationQueryHandlerAdapter to subscribe the annotated class to the query bus.
+   */
   @QueryHandler
   @Override
   public List<WorkoutSessionView> findApprenticeWorkoutViewByApprenticeIdAndWorkoutDateBetween(

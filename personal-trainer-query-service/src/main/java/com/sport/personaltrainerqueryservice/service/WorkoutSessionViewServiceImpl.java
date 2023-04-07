@@ -19,10 +19,12 @@ public class WorkoutSessionViewServiceImpl implements WorkoutSessionViewService 
 
   @Override
   public void updateApprenticeWorkoutView(AbstractWorkoutEvent workoutEvent) {
+
     WorkoutSessionView workoutView = null;
-    if (workoutEvent instanceof AppointWorkoutEvent) {
+
+    if (workoutEvent instanceof final AppointWorkoutEvent appointWorkoutEvent) {
+
       workoutView = new WorkoutSessionView();
-      final AppointWorkoutEvent appointWorkoutEvent = (AppointWorkoutEvent) workoutEvent;
       workoutView.setWorkoutId(appointWorkoutEvent.getWorkoutId());
       workoutView.setApprenticeId(appointWorkoutEvent.getApprenticeId());
       workoutView.setApprenticeName(appointWorkoutEvent.getApprenticeName());
@@ -31,17 +33,14 @@ public class WorkoutSessionViewServiceImpl implements WorkoutSessionViewService 
       workoutView.setWorkoutDate(appointWorkoutEvent.getWorkoutDate());
       workoutView.setSession(appointWorkoutEvent.getSession());
 
-    } else if (workoutEvent instanceof SetWorkoutExercisesEvent) {
-      final SetWorkoutExercisesEvent setWorkoutExercisesEvent =
-          (SetWorkoutExercisesEvent) workoutEvent;
-      workoutView =
-          workoutSessionViewRepository.findByWorkoutId(setWorkoutExercisesEvent.getWorkoutId());
+    } else if (workoutEvent instanceof final SetWorkoutExercisesEvent setWorkoutExercisesEvent) {
+
+      workoutView = workoutSessionViewRepository.findByWorkoutId(setWorkoutExercisesEvent.getWorkoutId());
       workoutView.setExercises(setWorkoutExercisesEvent.getExercises());
 
-    } else if (workoutEvent instanceof ConfirmWorkoutEvent) {
-      final ConfirmWorkoutEvent confirmWorkoutEvent = (ConfirmWorkoutEvent) workoutEvent;
-      workoutView =
-          workoutSessionViewRepository.findByWorkoutId(confirmWorkoutEvent.getWorkoutId());
+    } else if (workoutEvent instanceof final ConfirmWorkoutEvent confirmWorkoutEvent) {
+
+      workoutView = workoutSessionViewRepository.findByWorkoutId(confirmWorkoutEvent.getWorkoutId());
       workoutView.setConfirm();
     }
     if (workoutView != null) {
